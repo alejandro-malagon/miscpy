@@ -9,7 +9,11 @@ val_k = 3
 cust_type = 'ORGANIZATION'
 factor_name = 'Remote Deposit / Cash'
 
+<<<<<<< HEAD
 df = pd.read_csv("REPLACE")
+=======
+df = pd.read_csv("C:/Users/alemal03/Documents/Client Work/Washington Federal/Work/CRR Clusters/tbl_factors_cash_rdc.csv")
+>>>>>>> parent of 58b0742... Delete cluster_example.py
 
 df_data = df[df['CUSTOMER_TYPE'] == cust_type]
 df_data = df_data.set_index(['CUSTOMER_NUMBER', 'CUSTOMER_TYPE'])
@@ -65,4 +69,8 @@ df_data = df_data.join(df_data_no_out[['CLUSTER', 'CENTROID']])
 df_data['CLUSTER'][df_data['CLUSTER'].isnull()] = df_data['CLUSTER'][df_data['CENTROID'] == df_data['CENTROID'].max()].min()
 
 df_data = df_data.reset_index()
+<<<<<<< HEAD
 df_data.to_csv('REPLACE', index = False)
+=======
+df_data.to_csv('C:/Users/alemal03/Documents/Client Work/Washington Federal/Work/CRR Clusters/clusters_cash_rdc_org.csv', index = False)
+>>>>>>> parent of 58b0742... Delete cluster_example.py
